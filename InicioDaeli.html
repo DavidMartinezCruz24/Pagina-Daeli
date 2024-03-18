@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iniciar Sesión con Fecha</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #3498db; /* Fondo azul */
+        margin: 0;
+        padding: 0;
+        height: 100vh; /* Ajuste el tamaño de la página al tamaño de la ventana */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #calendar-container {
+        background-color: #fff; /* Fondo blanco del contenedor */
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra */
+    }
+    img {
+        max-width: 100%; /* Ajuste la imagen al tamaño máximo del contenedor */
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+<div id="calendar-container">
+    <img src="C:\Users\david\OneDrive\Documentos\My Games\Pagina WEB EYD\DAELI24.jpg" alt="DAELI24">
+    <h2>Selecciona la Fecha para Iniciar Sesión</h2>
+    <input type="text" id="calendar-input">
+    <button onclick="checkDate()">Iniciar Sesión</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    flatpickr("#calendar-input", {
+        dateFormat: "d/m/Y",
+        allowInput: true // Permite al usuario escribir la fecha manualmente
+    });
+
+    function checkDate() {
+        var selectedDate = document.getElementById('calendar-input').value;
+        var dateParts = selectedDate.split('/');
+        var day = parseInt(dateParts[0]);
+        var month = parseInt(dateParts[1]);
+        if (day === 24 && month === 7) {
+            alert("Inicio de sesión exitoso. Redirigiendo a la siguiente página.");
+            window.location.href = "file:///C:/Users/david/OneDrive/Documentos/My%20Games/Pagina%20WEB%20EYD/OpDAELI.html"; // Cambia "ruta/de/la/siguiente/pagina.html" por la URL de tu página siguiente
+        } else {
+            alert("Fecha incorrecta. Por favor selecciona el 24/07.");
+        }
+    }
+</script>
+</body>
+</html>

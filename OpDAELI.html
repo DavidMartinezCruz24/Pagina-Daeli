@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Página</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #3498db; /* Fondo azul */
+        margin: 0;
+        padding: 0;
+        height: 100vh; /* Ajuste el tamaño de la página al tamaño de la ventana */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative; /* Permite posicionar elementos hijos relativamente */
+    }
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 18px;
+        background-color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .gif {
+        position: absolute; /* Permite posicionar elementos relativamente al cuerpo */
+    }
+    /* Estilos específicos para cada gif */
+    #gif1 { top: 20%; left: 20%; }
+    #gif2 { top: 40%; left: 60%; }
+    #gif3 { top: 60%; left: 30%; }
+    #gif4 { top: 80%; left: 80%; }
+</style>
+</head>
+<body>
+
+<!-- Los gifs -->
+<img class="gif" id="gif1" src="https://media.tenor.com/inv_IC0z2rgAAAAj/cinnamoroll.gif" alt="cinnamoroll">
+<img class="gif" id="gif2" src="https://media.tenor.com/9cj1RrNfTtkAAAAj/kuromi.gif" alt="kuromi">
+<img class="gif" id="gif3" src="https://media.tenor.com/zV43CXfnP-8AAAAj/cute-so.gif" alt="My melody">
+<img class="gif" id="gif4" src="https://media.tenor.com/58FdoBBSVfgAAAAj/sanrio-characters-sanrio.gif" alt="Chococat">
+
+<!-- Los botones -->
+<button onclick="goToAniversary()">Fecha de Aniversario</button>
+<button onclick="goToEliBirthday()">Cumpleaños de Eli:3</button>
+<button onclick="goToAlbum()">Calendario De Menstruacion</button>
+
+<script>
+    function goToAniversary() {
+        window.location.href = "file:///C:/Users/david/OneDrive/Documentos/My%20Games/Pagina%20WEB%20EYD/PAG%20DAELI.html";
+    }
+
+    function goToEliBirthday() {
+        window.location.href = "file:///C:/Users/david/OneDrive/Documentos/My%20Games/Pagina%20WEB%20EYD/CumpleEli.html";
+    }
+
+    function goToAlbum() {
+        window.location.href = "file:///C:/Users/david/OneDrive/Documentos/My%20Games/Pagina%20WEB%20EYD/AlbumDeFotos.html";
+    }
+</script>
+
+</body>
+</html>

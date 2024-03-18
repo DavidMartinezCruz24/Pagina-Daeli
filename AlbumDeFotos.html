@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Próximo Periodo Menstrual</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #3498db; /* Fondo azul */
+        margin: 0;
+        padding: 0;
+        height: 100vh; /* Ajuste el tamaño de la página al tamaño de la ventana */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative; /* Permite posicionar elementos relativamente */
+    }
+    label {
+        color: white;
+        margin-bottom: 10px;
+    }
+    input {
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #fff;
+        color: #333;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #result {
+        color: white;
+        margin-top: 20px;
+    }
+    .gif {
+        max-width: 200px; /* Ajusta el ancho de los gifs */
+        position: absolute; /* Permite posicionar los gifs relativamente */
+    }
+    #gif-left {
+        left: 10px; /* Posiciona el gif de la izquierda */
+        top: 50%; /* Centra verticalmente */
+        transform: translateY(-50%); /* Centra verticalmente */
+    }
+    #gif-right {
+        right: 10px; /* Posiciona el gif de la derecha */
+        top: 50%; /* Centra verticalmente */
+        transform: translateY(-50%); /* Centra verticalmente */
+    }
+</style>
+</head>
+<body>
+
+<label for="last-period">Fecha del Último Periodo:</label>
+<input type="date" id="last-period">
+
+<button onclick="calculate()">Calcular</button>
+
+<div id="result"></div>
+
+<!-- Agregar los gifs -->
+<img class="gif" id="gif-left" src="https://media.tenor.com/5bd3cq5Ip9gAAAAj/minipini-sanrio.gif" alt="Gif 1">
+<img class="gif" id="gif-right" src="https://media.tenor.com/nPZmKB04o_sAAAAj/cinnamoroll.gif" alt="Gif 2">
+
+<script>
+function calculate() {
+    var lastPeriod = new Date(document.getElementById('last-period').value);
+    var nextPeriod = new Date(lastPeriod);
+    nextPeriod.setDate(nextPeriod.getDate() + 28); // Asumiendo un ciclo menstrual promedio de 28 días
+
+    document.getElementById('result').innerHTML = "Tu próximo período menstrual Eli:3 sería aproximadamente el " + formatDate(nextPeriod);
+}
+
+// Función para formatear la fecha
+function formatDate(date) {
+    var dd = date.getDate();
+    var mm = date.getMonth() + 1; // Los meses son indexados desde 0
+    var yyyy = date.getFullYear();
+
+    if(dd < 10) {
+        dd = '0' + dd;
+    } 
+    if(mm < 10) {
+        mm = '0' + mm;
+    } 
+
+    return dd + '/' + mm + '/' + yyyy;
+}
+</script>
+
+</body>
+</html>
